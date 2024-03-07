@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function validar() {
+            // alert("enviou os dados");
+            let nome = document.getElementById("nome").value;
+            let sobrenome = document.getElementById("sobrenome").value;
+            let senha = document.getElementById("senha").value;
+
+            if (nome == "") {
+                // alert("erro");
+                document.getElementById("nome").focus();
+                document.getElementById("avisos").innerHTML = "Campo nome não pode ficar em branco!";
+                return false;
+            }
+
+            if (sobrenome == "") {
+                document.getElementById("sobrenome").focus();
+                document.getElementById("avisos").innerHTML = "Campo sobrenome não pode ficar em branco!";
+                return false;
+            }
+
+            
+            if (senha == "") {
+                document.getElementById("senha").focus();
+                document.getElementById("avisos").innerHTML = "Campo senha não pode ficar em branco!";
+                return false;
+            }
+
+        }
+    </script>
 </head>
 <body>
-    
-    <form>
+    <div id="avisos" style="color: red;"></div> <br>
+    <form onsubmit="return validar()">
         Nome: <br>
         <input type="text" name="nome" id="nome"> <br><br>
 
@@ -18,7 +47,6 @@
         <input type="password" name="senha" id="senha"> <br><br>
 
         <input type="submit" value="Salvar" >
-
     </form>
 </body>
 </html>
