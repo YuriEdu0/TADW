@@ -4,9 +4,10 @@ function validar() {
     const cpf = document.querySelector("#cpf");
     const senha = document.querySelector("#senha");
     const profissao = document.querySelector("#profissao");
+    
 
     if (nome.value == "") {
-        alert("Erro: nome vazio!")
+        alert ("Erro: nome vazio!")
         return false;
     }
     if (sobrenome.value == "") {
@@ -19,6 +20,10 @@ function validar() {
     }
     if (senha.value == "") {
         alert("Erro: senha vazio!")
+        return false;
+    }
+    if (profissao.value == "") {
+        alert("Erro: profissao vazio!")
         return false;
     }
     alert("Sucesso!")
